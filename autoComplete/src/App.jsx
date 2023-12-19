@@ -11,7 +11,8 @@ export default function App (){
     }
   }
   return (
-    <div>
+    <>
+    <div className='search'>
       <input placeholder="Enter a letter" onChange={event => setQuery(event.target.value)} onKeyDown={handleKeyDown}/>
       {
         Countries.filter((country)=>{
@@ -21,11 +22,12 @@ export default function App (){
             return country
           }
         }).map((country) => (
-          <div key={country.code}>
+          <div key={country.code} className='list'>
             <p>{country.name}</p>
           </div>
         ))
       }
     </div>
+    </>
   )
 }
